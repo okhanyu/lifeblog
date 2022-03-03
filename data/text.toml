@@ -1,0 +1,13 @@
+siteTitle = "韩西瓜的电台 | 我要喝啤酒"
+description = "我是韩西瓜，全世界走走逛逛拍拍玩玩"
+footerLeftText = "我是韩西瓜，全世界走走逛逛拍拍玩玩。"
+contentTail = "的胡思乱想，版权归全世界所有，你随便抄"
+localUrl = "https://hanyu.cool/lifeblog/"
+
+[test]
+  "技术" = "https://file.hanyu.cool/hysite/hysite-fun/artice/image/test/1.jpg"
+  "广告" = "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1336119765,2231343437&fm=26&gp=0.jpg"
+  "创意" = "https://file.hanyu.cool/hysite/hysite-fun/artice/image/test/4.jpg"
+  "美食" = "http://pic1.win4000.com/wallpaper/a/58f467b96eb45.jpg"
+  "科技" = "https://static.is26.com/uploads/2020/04/desk-21-2.jpeg"
+  "推荐" = "https://file.hanyu.cool/hysite/hysite-fun/artice/image/test/3.jpg"

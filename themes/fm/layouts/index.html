@@ -1,0 +1,12 @@
+    {{ define "main" }}
+    {{- partial "head.html" . -}}
+<body class="home blog wp-embed-responsive  nice-style-radius  nice-style-shadow" style="transform: none;">
+    {{- partial "header.html" . -}}
+<div id="content">
+    {{ partial "main.html" . }}
+</div>
+    {{- partial "footer.html" . -}}
+    {{- partial "side.html" . -}} 
+    {{- partial "foot.html" . -}}
+ </body>
+    {{ end }}
