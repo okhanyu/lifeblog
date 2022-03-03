@@ -1,2 +1,0 @@
-# lifeblog
-lifeblog
