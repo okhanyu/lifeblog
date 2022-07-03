@@ -1,8 +1,0 @@
-baseURL = "https://hanyu.cool/lifeblog/"
-languageCode = "zh-cn"
-title = "Hanyu FM"
-theme = "fm"
-
-
-[params]
-
