@@ -5,7 +5,7 @@ draft: false
 categories: 广告
 tags: ["广告"]
 attendpos: ad-item
-attendbg: /img/index/2020033016485541.jpg
+attendbg: https://okhanyu.oss-cn-beijing.aliyuncs.com/hysite/hysite-fun/artice/image/test/1.jpg
 attendnumber: 1
 desc: ssads
 ---

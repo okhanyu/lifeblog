@@ -1,90 +1,157 @@
-
-		<div class="list-default-poster bg-dark pt-5 ">
-			<div class="bg-effect bg-dark bg-color" style="background: linear-gradient(-10deg, rgb(29, 28, 45) 0%, rgb(92, 103, 130) 100%, rgb(135, 97, 116) 100%);">
-			</div>
-			<!-- ### -->
-			<div class="d-flex flex-fill h-v-25 text-white">
-				<div class="position-relative w-100 py-5 py-md-5 my-auto">
-					<div class="container">
-						<div class="h1 text-white text-center">
-							{{ .Page.Title }}
-						</div>
-					</div>
+<div class="list-default-poster bg-dark pt-5 ">
+	<div class="bg-effect bg-dark bg-color" style="background: linear-gradient(-10deg, rgb(29, 28, 45) 0%, rgb(92, 103, 130) 100%, rgb(135, 97, 116) 100%);">
+	</div>
+	<!-- ### -->
+	<div class="d-flex flex-fill h-v-25 text-white">
+		<div class="position-relative w-100 py-5 py-md-5 my-auto">
+			<div class="container">
+				<div class="h1 text-white text-center">
+					{{ .Page.Title }}
 				</div>
 			</div>
 		</div>
-		<main class="py-3 py-md-4 py-xl-5">
-			<div class="container">
-				<div class="row row-sm list-archive list-grouped list-bordered-padding">
-				
-					{{ $title := .Page.Title }}
-				<!--	{  range .Site.RegularPages }
+	</div>
+</div>
+<main class="py-3 py-md-4 py-xl-5">
+	<div class="container">
+		<div class="row row-sm list-archive list-grouped list-bordered-padding">
+
+			{{ $title := .Page.Title }}
+			{{ $style := .Page.Params.style }}
+			<!--	{  range .Site.RegularPages }
 					{ $re :=  replace (print .Params.categories) "[" ""}
          			{ $re = replace (print $re) "]" ""}
          			{ if eq $title $re}
          		-->
 
-         		{{ range  where .Site.RegularPages ".Params.categories" $title }}
-					<div class="col-6 col-md-3 d-flex py-2">
-						<div class="list-item custom-hover">
-							<div class="media media-16x9">
-								<a class="media-content" href="{{.Page.Permalink}}" title="{{ .Page.Title }}"
-								target="_blank" style="background-image: url({{.Params.attendbg}});" data-bg=" url({{.Params.attendbg}})"
-								data-nclazyload="true" data-was-processed="true">
-									<span class="overlay">
-									</span>
-								</a>
-								<div class="media-action">
-									<span class="btn btn-icon btn-secondary btn-lg rounded-circle">
-										<span>
-											<i class="text-lg iconfont icon-picture1">
-											</i>
-										</span>
-									</span>
-								</div>
+			<!-- {{ range  where .Site.RegularPages ".Params.categories" $title }} {{ end }} -->
+
+
+			{{ if eq $style "section-card"}}
+
+			{{ range  .Site.RegularPages }}
+
+
+			<div class="col-6 col-md-3 d-flex py-2">
+				<div class="list-item custom-hover">
+					<div class="media media-16x9">
+						<a class="media-content" href="{{.Page.Permalink}}" title="{{ .Page.Title }}"
+						   target="_blank" style="background-image: url({{.Params.attendbg}});" data-bg=" url({{.Params.attendbg}})"
+						   data-nclazyload="true" data-was-processed="true">
+							<span class="overlay">
+							</span>
+						</a>
+						<div class="media-action">
+							<span class="btn btn-icon btn-secondary btn-lg rounded-circle">
+								<span>
+									<i class="text-lg iconfont icon-picture1">
+									</i>
+								</span>
+							</span>
+						</div>
+					</div>
+					<div class="list-content">
+						<div class="list-body">
+							<a href="{{.Page.Permalink}}" title="{{ .Page.Title }}" class="list-title text-md h-2x"
+							   target="_blank">
+								{{ .Page.Title }}
+							</a>
+						</div>
+						<div class="list-footer d-flex align-items-center text-muted mt-1 mt-lg-2">
+							<div class="text-xs">
+								{{ .Date }}
 							</div>
-							<div class="list-content">
-								<div class="list-body">
-									<a href="{{.Page.Permalink}}" title="{{ .Page.Title }}" class="list-title text-md h-2x"
-									target="_blank">
-										{{ .Page.Title }}
-									</a>
-								</div>
-								<div class="list-footer d-flex align-items-center text-muted mt-1 mt-lg-2">
-									<div class="text-xs">
-										{{ .Date }}
-									</div>
-									<div class="flex-fill">
-									</div>
-									<div class="text-xs text-nowrap">
-										<span class="d-inline-block d-md-inline-block mr-1 mr-md-2">
-											<i class="text-md iconfont icon-view">
-											</i>
-											<span class="d-inline-block align-middle">
-												<!-- 观看数量 -->
-											</span>
-										</span>
-										<!-- <span class="d-none d-md-none "> <i class="text-md iconfont icon-like-line"></i> <span class="d-inline-block align-middle">32</span> </span>  -->
-									</div>
-								</div>
+							<div class="flex-fill">
+							</div>
+							<div class="text-xs text-nowrap">
+								<span class="d-inline-block d-md-inline-block mr-1 mr-md-2">
+									<i class="text-md iconfont icon-view">
+									</i>
+									<span class="d-inline-block align-middle">
+										<!-- 观看数量 -->
+									</span>
+								</span>
+								<!-- <span class="d-none d-md-none "> <i class="text-md iconfont icon-like-line"></i> <span class="d-inline-block align-middle">32</span> </span>  -->
 							</div>
 						</div>
 					</div>
-					{{ end }} 	<!--{ end } -->
-					<!-- <template class="card-skeleton card-skeleton-small"></template>  -->
 				</div>
-				<!-- <nav class="navigation pagination" role="navigation" aria-label="Posts
+			</div>
+
+
+			{{ end }}
+			{{ else }}
+
+			<div class="col-lg-12">
+				<div class="list-plain-category mb-4 mb-lg-5" style="padding:10px">
+
+
+					<div class="list-grid list-grid-padding list-bordered list-bordered-padding my-n3 my-lg-n4">
+
+						{{ range  .Site.RegularPages }}
+
+						<!--  <div class="list-item custom-hover py-3 py-lg-4" style="padding:10px"> -->
+						<div class="list-item custom-hover py-3 py-lg-4" style="padding:10px;border-radius:0px;-webkit-box-shadow:0px 0px 0px -1px rgb(0 0 0 / 10%)">
+							<div class="media media-16x9 col-5 col-md-4 col-lg-4 mr-xl-3">
+								<a class="media-content" href="{{.Page.Permalink}}" target="_blank" title="{{ .Page.Title }}" style="background-image: url({{.Params.attendbg}});" data-bg=" url({{.Params.attendbg}})" data-nclazyload="true" data-was-processed="true">
+									<span class="overlay"></span>
+								</a>
+							</div>
+							<div class="list-content py-lg-1">
+								<div class="list-body">
+									<a href="{{.Page.Permalink}}" title="{{ .Page.Title }}" target="_blank" class="list-title text-lg h-2x">{{ .Page.Title }}</a>
+									<div class="text-sm text-muted d-none d-md-block mt-md-1 mt-lg-3">
+										<span class="h-2x">
+
+											<p style="font-size:12px;color:var(--color-muted)!important">{{ .Summary }}</p>
+											{{ if .Truncated }}
+											<a href="{{ .RelPermalink }}" style="font-weight:bold;color:#09815c!important">Read More…</a>
+											{{ end }}
+
+
+										</span>
+									</div>
+								</div>
+								<div class="list-footer d-flex align-items-center text-xs text-muted m-0">
+									<div>{{ .Date.Format "Monday, January 2, 2006"  }}</div>
+									<div class="flex-fill"></div>
+									<div class="text-nowrap ">
+										<!-- <span class="d-inline-block d-md-none mr-1 mr-md-3">
+                        <i class="text-md iconfont icon-view"></i>
+                        <span class="d-inline-block align-middle"></span></span>
+                         <span class="d-none d-md-none  mr-1 mr-md-3">
+                        <i class="text-md iconfont icon-Chat"></i>
+                        <span class="d-inline-block align-middle">1</span></span> -->
+										<span class="d-none d-md-inline-block ">
+											<i class="text-md iconfont icon-like-line"></i>
+											<span class="d-inline-block align-middle">{{.ReadingTime}} MinsRead · {{ .WordCount }} Words</span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>{{ end }}
+					</div>
+				</div>
+			</div>
+
+
+			{{ end }}
+
+
+			<!--{ end } -->
+			<!-- <template class="card-skeleton card-skeleton-small"></template>  -->
+		</div>
+		<!--  <nav class="navigation pagination" role="navigation" aria-label="Posts
 				Navigation">
 				<h2 class="screen-reader-text">Posts Navigation</h2>  
 				<div class="nav-links"> 
 				<span aria-current="page" class="page-numbers current">1</span> 
-				<a class="page-numbers" href="https://luolei.org/category/travel/page/2/">2</a> 
+				<a class="page-numbers" href="https:///category/travel/page/2/">2</a> 
 				<span class="page-numbers dots">…</span> 
-				<a class="page-numbers" href="https://luolei.org/category/travel/page/6/">6</a> 
-				<a class="next page-numbers" href="https://luolei.org/category/travel/page/2/"><i class="iconfont icon-youjiantou-2"></i></a> 
+				<a class="page-numbers" href="https:///category/travel/page/6/">6</a> 
+				<a class="next page-numbers" href="https:///category/travel/page/2/"><i class="iconfont icon-youjiantou-2"></i></a> 
 				</div>
 				</nav> 
-				-->
-			</div>
-		</main>
-		
+				 -->
+	</div>
+</main>
